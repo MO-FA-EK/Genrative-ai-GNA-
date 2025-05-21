@@ -109,7 +109,7 @@ def main():
     noise = torch.randn(1, nz, 1, 1, device=device)
     fake_image = generator(noise)
     torch.save(fake_image, 'generated_tensor.pt')
-    print("✅ Fake image generated.")
+    print(" Fake image generated.")
 
     # Discriminator on fake image
     output_fake = discriminator(fake_image)
@@ -127,7 +127,7 @@ def main():
     else:
         # Only show generated image
         plot_images([fake_image], ["Generated (Fake)"])
-        print(f"⚠️ Custom image not found at path: {user_image_path}")
+        print(f" Custom image not found at path: {user_image_path}")
 
 if __name__ == "__main__":
     main()
